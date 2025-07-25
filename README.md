@@ -36,10 +36,10 @@ Each pipeline step is executed stand alone and the intermediate results are gene
 
 ```
 cd framework
-python3 run.py [STEP_NUMER]
+python3 run.py [STEP_NUMBER]
 ```
 
-Where step number is numerical from 1-7.
+Where STEP_NUMBER is numerical from 1-7.
 
 ## *LLM-assisted Metamorphic Testing of Embedded Graphics Libraries*
 
