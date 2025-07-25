@@ -1,0 +1,59 @@
+{
+    "run_config": {
+        "target" : "qemu",
+        "xlspike" : {
+            "timeout": 240
+        },
+        "qemu" : {
+            "timeout": 240
+        }
+    },
+    "parallel": "-j",
+    "build_target": "clean all",
+    "build_config": {
+    },
+    "build_configs": {
+        "n205": {"CORE": "n205", "ARCH_EXT": ""},
+        "n300fbp": {"CORE": "n300f", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n300fd": {"CORE": "n300fd", "ARCH_EXT": ""},
+        "n300fdbp": {"CORE": "n300fd", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n900fdbpv": {"CORE": "n900fd", "ARCH_EXT": "_zve32f_zba_zbb_zbc_zbs_xxldspn1x"},
+        "nx900": {"CORE": "ux600", "ARCH_EXT": ""},
+        "nx900bp": {"CORE": "ux600", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldsp"},
+        "nx900fbpv": {"CORE": "ux600f", "ARCH_EXT": "_zve64f_zba_zbb_zbc_zbs_xxldsp"},
+        "nx900fd": {"CORE": "ux600fd", "ARCH_EXT": ""},
+        "nx900fdbpv": {"CORE": "ux600fd", "ARCH_EXT": "v_zba_zbb_zbc_zbs_xxldsp"}
+    },
+    "appconfig": {
+        "application/baremetal/benchmark/dhrystone": {
+            "build_config" : {},
+            "checks": {
+                "PASS": ["1000000/(User_Cycle/Number_Of_Runs)", "Please increase number"]
+            }
+        }
+    },
+    "expecteds": {
+        "application/baremetal/demo_dsp" : {
+            "n201e": { "build": false, "run": false }
+        },
+        "application/baremetal/benchmark/whetstone" : {
+            "n201": { "build": true, "run": false },
+            "n201e" : {"build": true, "run": false}
+        },
+        "application" : {
+            "n201e" : {"build": true, "run": false}
+        },
+        "test" : {
+            "n201e" : {"build": true, "run": false}
+        }
+    },
+    "expected": {
+        "application/baremetal/demo_nice": {"build": true, "run": true},
+        "application/rtthread/msh" : {"build": true, "run": true},
+        "application/baremetal/demo_spmp": {"build": true, "run": true},
+        "application/baremetal/demo_smode_eclic": {"build": true, "run": true},
+        "application/baremetal/demo_cidu": {"build": true, "run": false},
+        "application/baremetal/demo_cache": {"build": true, "run": false},
+        "test/core": {"build": true, "run": true}
+    }
+}

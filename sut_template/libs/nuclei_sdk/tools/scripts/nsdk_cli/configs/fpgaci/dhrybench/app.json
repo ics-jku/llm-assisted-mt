@@ -1,0 +1,41 @@
+{
+    "run_config": {
+        "target" : "hardware",
+        "hardware" : {
+            "baudrate": 115200,
+            "timeout": 60
+        },
+        "qemu": {
+            "qemu32": "qemu-system-riscv32",
+            "qemu64": "qemu-system-riscv64",
+            "timeout": 60
+        },
+        "ncycm": {
+            "timeout": 1200
+        }
+    },
+    "copy_objects": true,
+    "build_target": "clean all",
+    "build_config": {
+    },
+    "parallel" : "-j",
+    "checks": {
+        "PASS": [],
+        "FAIL": ["MEPC"]
+    },
+    "appdirs": [
+        "application/baremetal/benchmark/dhrystone"
+    ],
+    "appdirs_ignore": [
+        "application/baremetal/dsp_examples",
+        "application/baremetal/Internal"
+    ],
+    "appconfig": {
+        "application/baremetal/benchmark/dhrystone": {
+            "build_config" : {},
+            "checks": {
+                "PASS": ["CSV, Dhrystone"]
+            }
+        }
+    }
+}

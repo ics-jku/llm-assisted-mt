@@ -1,0 +1,45 @@
+{
+    "run_config": {
+        "target" : "hardware",
+        "hardware" : {
+            "baudrate": 115200,
+            "timeout": 60
+        },
+        "qemu": {
+            "qemu32": "qemu-system-riscv32",
+            "qemu64": "qemu-system-riscv64",
+            "timeout": 60
+        },
+        "ncycm": {
+            "timeout": 1200
+        }
+    },
+    "parallel" : "-j",
+    "build_target": "clean all",
+    "build_config": {
+    },
+    "checks": {
+        "PASS": [],
+        "FAIL": ["MEPC"]
+    },
+    "appdirs": [
+        "application/baremetal/smphello",
+        "application/baremetal/demo_cidu"
+    ],
+    "appdirs_ignore": [
+    ],
+    "appconfig": {
+        "application/baremetal/demo_cidu": {
+            "build_config" : {},
+            "checks": {
+                "PASS": ["[ERROR]__CIDU_PRESENT must be defined as 1 in <Device>.h!", "Core 1 has received interrupt from core 0", "[WARN] SMP & CIDU not present"]
+            }
+        },
+        "application/baremetal/smphello": {
+            "build_config" : {},
+            "checks": {
+                "PASS": ["All harts boot successfully!"]
+            }
+        }
+    }
+}

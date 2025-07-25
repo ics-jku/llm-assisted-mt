@@ -1,0 +1,47 @@
+{
+    "run_config": {
+        "target" : "hardware",
+        "hardware" : {
+            "baudrate": 115200,
+            "timeout": 240
+        }
+    },
+    "parallel": "-j",
+    "copy_objects": true,
+    "build_target": "clean all",
+    "build_config": {
+        "SOC": "evalsoc",
+        "ARCH_EXT": "",
+        "DOWNLOAD": "ilm"
+    },
+    "build_configs": {
+        "n900-newlib-small": {"CORE": "n900", "STDCLIB": "newlib_small", "ARCH_EXT": ""},
+        "n900-libncrt-small": {"CORE": "n900", "STDCLIB": "libncrt_small", "ARCH_EXT": ""},
+        "n900b-newlib-small": {"CORE": "n900", "STDCLIB": "newlib_small", "ARCH_EXT": "_zba_zbb_zbc_zbs"},
+        "n900b-libncrt-small": {"CORE": "n900", "STDCLIB": "libncrt_small", "ARCH_EXT": "_zba_zbb_zbc_zbs"},
+        "n900p-newlib-small": {"CORE": "n900", "STDCLIB": "newlib_small", "ARCH_EXT": "_xxldspn1x"},
+        "n900p-libncrt-small": {"CORE": "n900", "STDCLIB": "libncrt_small", "ARCH_EXT": "_xxldspn1x"},
+        "n900bp-newlib-small": {"CORE": "n900", "STDCLIB": "newlib_small", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n900bp-libncrt-small": {"CORE": "n900", "STDCLIB": "libncrt_small", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n900f-newlib-small": {"CORE": "n900f", "STDCLIB": "newlib_small", "ARCH_EXT": ""},
+        "n900f-libncrt-small": {"CORE": "n900f", "STDCLIB": "libncrt_small", "ARCH_EXT": ""},
+        "n900fb-newlib-small": {"CORE": "n900f", "STDCLIB": "newlib_small", "ARCH_EXT": "_zba_zbb_zbc_zbs"},
+        "n900fb-libncrt-small": {"CORE": "n900f", "STDCLIB": "libncrt_small", "ARCH_EXT": "_zba_zbb_zbc_zbs"},
+        "n900fp-newlib-small": {"CORE": "n900f", "STDCLIB": "newlib_small", "ARCH_EXT": "_xxldspn1x"},
+        "n900fp-libncrt-small": {"CORE": "n900f", "STDCLIB": "libncrt_small", "ARCH_EXT": "_xxldspn1x"},
+        "n900fbp-newlib-small": {"CORE": "n900f", "STDCLIB": "newlib_small", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n900fbp-libncrt-small": {"CORE": "n900f", "STDCLIB": "libncrt_small", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n900fd-newlib-small": {"CORE": "n900fd", "STDCLIB": "newlib_small", "ARCH_EXT": ""},
+        "n900fd-libncrt-small": {"CORE": "n900fd", "STDCLIB": "libncrt_small", "ARCH_EXT": ""},
+        "n900fdb-newlib-small": {"CORE": "n900fd", "STDCLIB": "newlib_small", "ARCH_EXT": "_zba_zbb_zbc_zbs"},
+        "n900fdb-libncrt-small": {"CORE": "n900fd", "STDCLIB": "libncrt_small", "ARCH_EXT": "_zba_zbb_zbc_zbs"},
+        "n900fdp-newlib-small": {"CORE": "n900fd", "STDCLIB": "newlib_small", "ARCH_EXT": "_xxldspn1x"},
+        "n900fdp-libncrt-small": {"CORE": "n900fd", "STDCLIB": "libncrt_small", "ARCH_EXT": "_xxldspn1x"},
+        "n900fdbp-newlib-small": {"CORE": "n900fd", "STDCLIB": "newlib_small", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"},
+        "n900fdbp-libncrt-small": {"CORE": "n900fd", "STDCLIB": "libncrt_small", "ARCH_EXT": "_zba_zbb_zbc_zbs_xxldspn1x"}
+    },
+    "expected": {
+        "application/baremetal/demo_nice": {"build": true, "run": false},
+        "test/core": {"build": false, "run": false}
+    }
+}
