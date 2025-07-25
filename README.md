@@ -1,4 +1,4 @@
-# Function Lifetime Diagram
+# LLM-Assited Metamorphic Testing
 
 This repository contains a novel approach for generating MRs for MT of embedded graphics libraries using LLMs.
 Because directly creating MRs with simple prompts is too complex for the LLM, we employ proven prompting strategies to develop our LLM-assisted MR pipeline.
