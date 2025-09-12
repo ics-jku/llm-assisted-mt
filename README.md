@@ -13,10 +13,10 @@ In our experiments, we verify a widely used embedded graphics library.
 
 ## Setup Env
 
-1. Clone Relation Coverage repository
+1. Clone repository
 ```
-git clone https://github.com/ics-jku/function_lifetime_diagram.git
-cd function_lifetime_diagram
+git clone https://github.com/ics-jku/llm-assisted-mt.git
+cd llm-assisted-mt
 ```
 
 2. Install packages and build RISCV-VP++ according to README within riscv-vp-plusplus folder
